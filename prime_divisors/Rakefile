@@ -1,0 +1,6 @@
+task :c do
+  out = 'a.out'
+  sh "cc -o #{out} benchmark.c -O2"
+  sh "time ./#{out}"
+  rm out
+end
