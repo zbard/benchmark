@@ -49,5 +49,5 @@ int main(void)
     b = 10000000;
     k = 2;
     printf(" Number of integers between %d and %d, each having exactly %d prime divisors : %d" ,a,b,k,count(a,b,k));
-    return 1;
+    return 0;
 }
