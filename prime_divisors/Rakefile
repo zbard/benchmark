@@ -4,3 +4,13 @@ task :c do
   sh "time ./#{out}"
   rm out
 end
+
+namespace :ruby do
+  task :test do
+    sh "ruby test_primes.rb"
+  end
+
+  task :bench do
+    sh "time ruby primes.rb"
+  end
+end
