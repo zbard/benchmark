@@ -1,3 +1,12 @@
+task :cpython do
+    sh "time python benchmark.py"
+end
+
+task :pypy do
+    sh "time pypy benchmark.py"
+end
+
+
 task :c do
   out = 'a.out'
   sh "cc -o #{out} benchmark.c -O2"
