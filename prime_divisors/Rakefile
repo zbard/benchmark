@@ -14,6 +14,14 @@ task :c do
   rm out
 end
 
+
+task :java do
+  out = "Benchmark.class"
+  sh "javac Benchmark.java"
+  sh "time java Benchmark"
+  rm out
+end
+
 namespace :ruby do
   task :test do
     sh "ruby test_primes.rb"
