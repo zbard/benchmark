@@ -13,9 +13,13 @@ def n_prime_divisors(n)
 end
 
 def integers_having_prime_divisors(from, to, n_divisors)
+  result = 0
   (from..to).count do |i|
-    n_prime_divisors(i) == n_divisors
+    if n_prime_divisors(i) == n_divisors
+      result += 1
+    end
   end
+  result
 end
 
 from = 2
