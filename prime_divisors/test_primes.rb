@@ -11,7 +11,7 @@ pi = {10 => 4,
 describe 'primes' do
   it 'should match known counts' do
     pi.each do |x, pi_x|
-      result = `ruby primes.rb #{x} | awk '{ print $4 }'`.chomp.to_i
+      result = `ruby primes.rb #{x} | awk '{ print $2 }'`.chomp.to_i
       assert_equal pi_x, result
     end
   end
