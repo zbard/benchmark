@@ -29,6 +29,11 @@ task :go do
   rm out
 end
 
+task :clojure do
+  # this is a horrible hack until I figure out how to make a jar sans lein
+  sh "time java -cp clojure.jar clojure.main benchmark.clj"
+end
+
 namespace :ruby do
   task :test do
     sh "ruby test_primes.rb"
