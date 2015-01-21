@@ -51,6 +51,12 @@ def pi(n)
   n_primes(2, n)
 end
 
-n = (ARGV.first || 10000000).to_i
-result = pi(n)
-puts "#{n} #{result}"
+def main
+  n = (ARGV.first || 10000000).to_i
+  result = pi(n)
+  puts "#{n} #{result}"
+end
+
+if __FILE__ == $0
+  main
+end
