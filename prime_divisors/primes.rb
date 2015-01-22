@@ -10,45 +10,22 @@
 #     n pi(n)
 #
 
-# @return The number of prime divisors of @p n.
-
-def n_prime_divisors(n)
-  return 1 if n == 1
-  result = 2
-  d = 2
-  while d * d <= n
-    if n % d == 0
-      n /= d
-      result += 1
-    end
-    d += 1
-  end
-  result
+def is_prime(n)
+  return true if n == 2
+  (2..Math.sqrt(n)).all? { |d| n % d != 0 }
 end
 
-# @return The numbers of integers between @p from and @p to (both
-# inclusive) having exactly @p n_divisors prime divisors.
+# @return The numbers of primes between @p from and @p to (both
+# inclusive).
 
-def n_nums_with_k_prime_divisors(from, to, n_divisors)
-  result = 0
-  (from..to).count do |i|
-    if n_prime_divisors(i) == n_divisors
-      result += 1
-    end
-  end
-  result
-end
-
-# @return The number of primes between @p from and @p to (both inclusive).
-
-def n_primes(from, to)
-  n_nums_with_k_prime_divisors(from, to, 2)
+def n_primes_between(from, to)
+  (from..to).count { |n| is_prime n }
 end
 
 # @return The number of primes less than or equal to @ n.
 
 def pi(n)
-  n_primes(2, n)
+  n_primes_between(2, n)
 end
 
 def main
